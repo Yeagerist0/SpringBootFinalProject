@@ -1,19 +1,15 @@
 # Expense Tracker Frontend
 
-A professional React TypeScript frontend application for the Expense Tracker system. Built with modern technologies and best practices.
+A modern React TypeScript frontend for managing personal expenses and budgets.
 
-## 🚀 Technologies
+## Tech Stack
 
-- **React 18** - Modern React with hooks
-- **TypeScript** - Type-safe JavaScript
-- **Vite** - Lightning-fast build tool
-- **TailwindCSS** - Utility-first CSS framework
-- **React Router** - Client-side routing
-- **Axios** - HTTP client with interceptors
-- **Recharts** - Beautiful charts and analytics
-- **React Hook Form** - Form validation
-- **React Hot Toast** - Toast notifications
-- **Lucide React** - Beautiful icons
+- React 18 with TypeScript
+- Vite for fast development
+- TailwindCSS for styling
+- React Router for navigation
+- Axios for API calls
+- Recharts for data visualization
 
 ## 📁 Project Structure
 
@@ -74,133 +70,47 @@ npm run dev
 
 The application will be available at `http://localhost:5173`
 
-## 🎯 Features
+## Features
 
-### Authentication
-- Login and registration with JWT tokens
-- Automatic token refresh
-- Protected routes
-- Persistent sessions
+- User authentication with JWT
+- Expense tracking with categories
+- Budget management and alerts
+- Analytics and visualizations
+- Receipt upload support
+- Responsive design
 
-### Dashboard
-- Total income, expenses, and savings summary
-- Category breakdown pie chart
-- Budget alerts
-- Recent activity overview
+## Setup
 
-### Expense Management
-- Create, edit, and delete expenses
-- Upload receipt images
-- Filter by date, category, and amount
-- Pagination and sorting
-- Search functionality
+1. Install dependencies:
+```bash
+npm install
+```
 
-### Category Management
-- Create custom categories
-- Color and icon customization
-- Income and expense categories
-- Default categories from backend
+2. Create `.env` file:
+```bash
+VITE_API_BASE_URL=http://localhost:8080/api
+```
 
-### Budget Management
-- Set budget limits per category
-- Monthly, quarterly, and yearly periods
-- Alert threshold configuration
-- Real-time progress tracking
-- Visual progress bars with color coding
+3. Start the development server:
+```bash
+npm run dev
+```
 
-### Analytics
-- Monthly trends line chart
-- Income vs expense bar chart
-- Category breakdown
-- Summary tables
-- Exportable data
-
-## 🔧 Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
 
-## 🎨 UI/UX Features
+## Project Structure
 
-- Fully responsive design (mobile, tablet, desktop)
-- Modern and clean interface
-- Smooth animations and transitions
-- Toast notifications for user feedback
-- Loading states for async operations
-- Error handling with user-friendly messages
-- Color-coded categories and budgets
-- Interactive charts and visualizations
-
-## 🔐 Security
-
-- JWT token authentication
-- Automatic token refresh on 401 errors
-- Secure token storage in localStorage
-- Protected API endpoints
-- CORS configuration
-- Input validation
-
-## 📱 Responsive Design
-
-- Mobile-first approach
-- Collapsible sidebar on mobile
-- Touch-friendly UI elements
-- Optimized for all screen sizes
-
-## 🚀 Deployment
-
-### Build for Production
-
-```bash
-npm run build
+```
+src/
+├── components/     # Reusable UI components
+├── context/        # React Context (Auth)
+├── pages/          # Page components
+├── services/       # API services
+├── types/          # TypeScript types
+└── utils/          # Helper functions
 ```
 
-The build output will be in the `dist/` directory.
-
-### Deploy with Docker
-
-See the main project README for Docker deployment instructions.
-
-## 🔄 API Integration
-
-The frontend automatically proxies API requests to the backend:
-
-- Development: `http://localhost:8080/api`
-- Production: Configure `VITE_API_BASE_URL` environment variable
-
-All API calls include:
-- JWT Bearer token in Authorization header
-- Automatic token refresh on expiry
-- Error handling with toast notifications
-
-## 📊 Charts and Visualizations
-
-- **Dashboard**: Pie chart for category breakdown
-- **Analytics**: Line chart for monthly trends
-- **Analytics**: Bar chart for income vs expense comparison
-- **Budgets**: Progress bars with color coding
-
-## 🎯 Best Practices
-
-- TypeScript for type safety
-- Modular component structure
-- Service layer for API calls
-- Context API for state management
-- Custom hooks for reusable logic
-- Utility functions for common operations
-- Consistent naming conventions
-- Comprehensive error handling
-
-## 🤝 Contributing
-
-This project is part of a Final Term Project for Backend Engineering course.
-
-## 📝 License
-
-This project is for educational purposes.
-
-## 👨‍💻 Author
-
-Developed as part of Final Term Project - Backend Engineering (Spring Boot)
