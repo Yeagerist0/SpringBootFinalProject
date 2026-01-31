@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/expense_tracker_dev
+  
+  redis:
+    host: localhost
+    port: 6379
+  
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com
+    password: your-app-password
+
+logging:
+  level:
+    root: DEBUG
+    com.expensetracker: TRACE

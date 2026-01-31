@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: expense-tracker-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: expense_tracker
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - expense-tracker-network
+
+  redis:
+    image: redis:latest
+    container_name: expense-tracker-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - expense-tracker-network
+
+  app:
+    build: .
+    container_name: expense-tracker-app
+    ports:
+      - "8080:8080"
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/expense_tracker
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+      AWS_SECRET_KEY: ${AWS_SECRET_KEY}
+      AWS_REGION: ${AWS_REGION}
+      AWS_S3_BUCKET: ${AWS_S3_BUCKET}
+      MAIL_HOST: ${MAIL_HOST}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAIL_FROM: ${MAIL_FROM}
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - expense-tracker-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  expense-tracker-network:
+    driver: bridge
